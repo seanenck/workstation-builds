@@ -7,3 +7,16 @@ though it requires the use of an atomic spin (from fedora) the first
 time so that the bundle can be built and then bootc'd into.
 
 _This image is built and deployed locally/manually via `just`_
+
+## utils
+
+Contains simple helpers to inspect/review/deal with images.
+
+### oar.py
+
+o(ci)-a(rchive) r(eader) will quickly/simply unpack an oci archive,
+very naively, into an output directory
+
+```
+python oar.py <file>.ociarchive destdir/
+```
