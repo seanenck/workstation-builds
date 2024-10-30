@@ -1,5 +1,5 @@
 destdir := "/var/cache/image"
-workdir := env_var('HOME') / "Downloads"
+workdir := home_dir() / "Downloads"
 name    := "system.ociarchive"
 image   := workdir / name
 target  := destdir / name
