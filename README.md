@@ -12,7 +12,7 @@ _This image is built and deployed locally/manually via `just`_
 
 Contains simple helpers to inspect/review/deal with images.
 
-### oar.py
+### oar
 
 o(ci)-a(rchive) r(eader) will quickly/simply unpack an oci archive,
 very naively, into an output directory
