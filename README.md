@@ -8,7 +8,7 @@ time so that the bundle can be built and then bootc'd into.
 
 _This image is built and deployed locally/manually via `just`_
 
-## utils
+## util
 
 Contains simple helpers to inspect/review/deal with images.
 
