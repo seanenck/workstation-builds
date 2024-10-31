@@ -20,3 +20,13 @@ very naively, into an output directory
 ```
 python oar.py <file>.ociarchive destdir/
 ```
+
+to just list JSON information
+```
+python oar.py <file>.ociarchive destdir/ --mode info
+```
+
+or to list file content without fully unpacking the archive blobs
+```
+python oar.py <file>.ociarchive destdir/ --mode ls
+```
