@@ -2,7 +2,9 @@ ARG release=41
 ARG variant=sericea
 
 FROM quay.io/fedora-ostree-desktops/$variant:$release
-RUN dnf5 install --setopt=install_weak_deps=False -y \
+RUN dnf5 update -y && \
+    dnf upgrade -y && \
+    dnf5 install --setopt=install_weak_deps=False -y \
     age \
     alacritty \
     ripgrep \
