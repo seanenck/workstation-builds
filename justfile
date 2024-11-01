@@ -1,7 +1,8 @@
 destdir := home_dir() / ".local" / "image"
 ts      := shell("date +%Y%m%d%H%M%S")
+hash    := `git log -n 1 --format=%h`
 ext     := ".ociarchive"
-name    := ts + ext
+name    := ts + "." + hash + ext
 target  := destdir / name
 
 build:
