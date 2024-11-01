@@ -16,6 +16,7 @@ RUN dnf5 update -y && \
     distrobox \
     bat && \
     dnf5 remove -y \
+    firefox \
     toolbox \
     foot && \
     dnf clean all && \
