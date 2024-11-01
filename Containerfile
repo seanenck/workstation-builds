@@ -13,8 +13,10 @@ RUN dnf5 update -y && \
     just \
     binutils \
     neovim \
+    distrobox \
     bat && \
     dnf5 remove -y \
+    toolbox \
     foot && \
     dnf clean all && \
     ostree container commit
