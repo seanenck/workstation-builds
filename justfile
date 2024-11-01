@@ -1,15 +1,10 @@
 destdir := home_dir() / ".local" / "image"
-workdir := home_dir() / "Downloads"
-name    := "system.ociarchive"
-image   := workdir / name
+ts      := shell("date +%Y%m%d%H%M%S")
+ext     := ".ociarchive"
+name    := ts + ext
 target  := destdir / name
 
-full: build deploy
-
 build:
-    buildah bud -t oci-archive:{{image}} Containerfile
-
-deploy:
-    test ! -e {{target}} || mv {{target}} {{target}}.last
-    mv {{image}} {{target}}
+    buildah bud -t oci-archive:{{target}} Containerfile
     sudo bootc switch --transport=oci-archive {{target}}
+    find {{destdir}} -type f -name "*{{ext}}" | sort -r | tail -n+3 | xargs rm -f
